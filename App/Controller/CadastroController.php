@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBarber\Controller;
+namespace App\Controller;
 
-use AppBarber\Model\CadastroModel;
+use App\Model\CadastroModel;
 
 class CadastroController extends Controller
 {

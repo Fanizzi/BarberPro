@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBarber\Model;
+namespace App\Model;
 
 abstract class Model
 {

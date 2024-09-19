@@ -10,3 +10,4 @@ class MySQL extends PDO
         return parent::__construct($this->dsn, $this->user, $this->pass);
     }
 }
+

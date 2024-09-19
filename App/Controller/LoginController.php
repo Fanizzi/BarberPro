@@ -1,14 +1,14 @@
 <?php
 
-namespace AppBarber\Controller;
+namespace App\Controller;
 
-use AppBarber\Model\LoginModel;
+use App\Model\LoginModel;
 
 class LoginController extends Controller
 {
     public static function index()
     {
-        parent::render('Login/FormLogin');
+        parent::render('/Login/FormLogin');
     }
 
     public static function auth()

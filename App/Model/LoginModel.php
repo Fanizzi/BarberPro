@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBarber\Model;
+namespace App\Model;
 
-use AppBarber\DAO\LoginDAO;
+use App\DAO\LoginDAO;
 
 class LoginModel extends Model
 {

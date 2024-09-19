@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBarber\DAO;
+namespace App\DAO;
 
 use PDO;
 

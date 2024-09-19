@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBarber\Model;
+namespace App\Model;
 
-use AppBarber\DAO\CadastroDAO;
+use App\DAO\CadastroDAO;
 
 class CadastroModel extends Model
 {

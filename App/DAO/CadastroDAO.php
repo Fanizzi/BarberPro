@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBarber\DAO;
+namespace App\DAO;
 use \PDO;
 
-use AppBarber\Model\CadastroModel;
+use App\Model\CadastroModel;
 
 class CadastroDAO extends DAO
 {
