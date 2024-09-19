@@ -34,11 +34,4 @@ class CadastroController extends Controller
 
         header("Location: /login");
     }
-
-    public static function update()
-    {
-        $model = new CadastroModel();
-
-        parent::render('Cadastro/FormAlte')
-    }
 }
