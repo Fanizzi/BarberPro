@@ -8,7 +8,7 @@ class CadastroController extends Controller
 {
     public static function index()
     {
-        parent::render('Cadastro/FormCadastro');
+        parent::render('/Cadastro/FormCadastroCliente');
     }
 
     public static function form()
@@ -18,7 +18,7 @@ class CadastroController extends Controller
         if(isset($_GET['id']))
             $model = $model->getById( (int) $_GET['id']);
 
-        parrent::rebder('Cadastro/FormCadastro', $model);
+        parent::render('/Cadastro/FormCadastroCliente', $model);
     }
 
     public static function save ()

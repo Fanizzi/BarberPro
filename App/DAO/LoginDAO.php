@@ -21,6 +21,6 @@ class LoginDAO extends DAO
         $stmt->bindValue(2, $senha);
         $stmt->execute();
 
-        return $stmt->fetchObject("AppBarber\Model\LoginModel");
+        return $stmt->fetchObject("App\Model\LoginModel");
     }
 }
