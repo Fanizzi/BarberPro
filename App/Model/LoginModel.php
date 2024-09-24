@@ -6,6 +6,8 @@ use App\DAO\LoginDAO;
 
 class LoginModel extends Model
 {
+    public $email, $senha;
+
     public function authenticate()
     {
         $dao = new LoginDAO();

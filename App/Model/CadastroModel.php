@@ -6,7 +6,7 @@ use App\DAO\CadastroDAO;
 
 class CadastroModel extends Model
 {
-    public $id, $nome, $email, $senha, $telefone;
+    public $id, $nome, $email, $senha, $telefone, $id_servico;
 
     public function save()
     {
@@ -38,7 +38,7 @@ class CadastroModel extends Model
     {
         $dao = new CadastroDAO();
 
-        $obj = $dap->selectById($id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new CadastroModel();
     }

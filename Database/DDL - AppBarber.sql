@@ -30,7 +30,7 @@ CREATE TABLE Cliente (
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(16) NOT NULL,
     telefone CHAR(11) NOT NULL,
-    id_servico INT NOT NULL,
+    id_servico INT,
     FOREIGN KEY (id_servico) REFERENCES Servicos(id)
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE Cliente (
 CREATE TABLE Lembretes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
-    id_servico INT NOT NULL,
+    id_servico INT,
     id_nome_barbearia INT NOT NULL,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
     FOREIGN KEY (id_servico) REFERENCES Servicos(id),

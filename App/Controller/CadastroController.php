@@ -21,17 +21,22 @@ class CadastroController extends Controller
         parent::render('/Cadastro/FormCadastroCliente', $model);
     }
 
-    public static function save ()
+    public static function save()
     {
         $cadastro = new CadastroModel();
 
-        $cadastro->id = $_POST['id'];
+        // Verifica se 'id' existe antes de acessá-lo
+        $cadastro->id = isset($_POST['id']) ? $_POST['id'] : null; // ou um valor padrão
         $cadastro->nome = $_POST['nome'];
         $cadastro->email = $_POST['email'];
         $cadastro->senha = $_POST['senha'];
         $cadastro->telefone = $_POST['telefone'];
+        
+        // Opcionalmente, você pode adicionar validação aqui para garantir que os campos obrigatórios estejam preenchidos
+
         $cadastro->save();
 
         header("Location: /login");
     }
+
 }
