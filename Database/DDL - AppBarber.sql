@@ -10,7 +10,7 @@ CREATE TABLE Barbearia (
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(16) NOT NULL,
     telefone CHAR(11) NOT NULL,
-    cpf CHAR(11) NOT NULL
+    cnpj VARCHAR(14) NOT NULL
 );
 
 -- Criação da tabela Servicos
@@ -53,3 +53,4 @@ CREATE TABLE Cliente_Lembrete_Assoc (
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
     FOREIGN KEY (id_lembretes) REFERENCES Lembretes(id)
 );
+

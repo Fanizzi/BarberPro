@@ -9,12 +9,20 @@ $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($uri_parse) {
 
-    case '/register':
+    case '/register_user/':
         CadastroController::form();
         break;
 
-    case '/register/save':
+    case '/register_user/save':
         CadastroController::save();
+        break;
+    
+    case '/regiser_barbershop/':
+        CadastroBarberController::form();
+        break;
+    
+    case '/register_barbershop/save':
+        CadastroBarberController::save();
         break;
 
     case '/login':
@@ -23,6 +31,13 @@ switch ($uri_parse) {
 
     case '/login/auth':
         LoginController::auth();
+        break;
+
+    case '/login_barbershop':
+        LoginBarberController::index();
+        break;    
+    case '/login_barbershop/auth':
+        LoginBarberController::auth();
         break;
     
     case '/main':
