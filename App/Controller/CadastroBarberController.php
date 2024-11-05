@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\CadastroModel;
+use App\Model\CadastroBarberModel;
 
 class CadastroBarberController extends Controller
 {
