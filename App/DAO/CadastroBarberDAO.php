@@ -5,7 +5,7 @@ use \PDO;
 
 use App\Model\CadastroBarberModel;
 
-class CadastroDAO extends DAO
+class CadastroBarberDAO extends DAO
 {
     public function __construct()
     {

@@ -14,36 +14,88 @@
         <img href="main.php" src="CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro">
             <div class="navbar-links">
                 <ul>
-                    <li>início</li>
-                    <li>agendamentos</li>
-                    <li>procurar</li>
+                    <a href="/main"><li>início</li></a>
+                    <a href=""><li>agendamentos</li></a>
+                    <a href=""><li>procurar</li></a>
                 </ul>
             </div>
 
             <div class="navbar-right">
                 <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
-                <button id="login-button">Login</button>
+                <a href="/register/"><button id="login-button">Login</button></a>
             </div>             
         </nav>
     </header>
 
     <main>
         <section class="home-container">
-            <div class="search-container">
-                <input type="text" placeholder="Buscar..." id="search-input">
-                <button id="search-button">
-                    <img src="CSS/Sources/search.png" alt="Pesquisar" class="search-icon">
-                </button>
+            <h2>Encontre o seu Barbeiro!</h2>
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar..."      id="search-input">
+                    <button id="search-button">
+                        <img src="CSS/Sources/search.png" alt="Pesquisar" class="search-icon">
+                    </button>
+                </div>
             </div>
         </section>
 
         <section class="barbers-container">
+        <div class="cards-container">
+        <div class="card">
+            <img src="CSS/Sources/card1-image.jpg" alt="Título do Card 1" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 1</h3>
+                <p>Endereço do Card 1</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="CSS/Sources/card2-image.jpg" alt="Título do Card 2" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 2</h3>
+                <p>Endereço do Card 2</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="CSS/Sources/card3-image.jpg" alt="Título do Card 3" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 3</h3>
+                <p>Endereço do Card 3</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="CSS/Sources/card4-image.jpg" alt="Título do Card 4" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 4</h3>
+                <p>Endereço do Card 4</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="CSS/Sources/card5-image.jpg" alt="Título do Card 5" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 5</h3>
+                <p>Endereço do Card 5</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="CSS/Sources/card6-image.jpg" alt="Título do Card 6" class="card-image">
+            <div class="card-content">
+                <h3>Título do Card 6</h3>
+                <p>Endereço do Card 6</p>
+            </div>
+        </div>
+        </div>
         </section>
     </main>
 
     <footer>
         <section class="footer-container">
-            <h3>© 2024 BarberPro</h3>
+            <p>© 2024 BarberPro</p>
         </section>
     </footer>
 
