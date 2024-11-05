@@ -1,9 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilites;
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 * {
     margin: 0;
@@ -13,3 +8,125 @@
     font-family: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #e48900;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav {
+    background-color: #242424;
+    height: 10vh;
+}
+
+#logo {
+    float: left;
+    width: 30vh;
+}
+
+.navbar-links {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links ul {
+    list-style: none;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li {
+    display: inline-block;
+    margin: auto;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+    font-size: 25px;
+}
+
+.navbar-links a {
+    color:  #e48900;
+    text-decoration: none;
+}
+
+.navbar-links li:hover {
+    color: #e48900;
+    border-bottom-color: #e48900;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+#login-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #555; /* Cor do botão */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-button:hover {
+    background-color: #e48900;
+}
+
+.user-icon {
+    height: 6vh; /* Tamanho do ícone */
+    margin: 10px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    padding: 5px 35px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px; /* Largura ajustável */
+}
+
+#search-button {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-icon {
+    height: 24px;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    #logo {
+        height: 40px;
+    }
+
+    .navbar-links ul {
+        gap: 15px;
+    }
+}

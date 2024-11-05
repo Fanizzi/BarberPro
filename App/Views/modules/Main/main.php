@@ -4,52 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/CSS/Sources/style.css">
+    <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>BarberPro</title>
 </head>
 <body>
     <header>
-        <img href="main.php" src="/App/CSS/Sources/BarberPro.png" alt="BarberPro">
         <nav>
+        <img href="main.php" src="CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro">
             <div class="navbar-links">
                 <ul>
-                    <li>home</li>
-                    <li>barbearias</li>
+                    <li>início</li>
                     <li>agendamentos</li>
-                    <li>trabalhe conosco</li>
+                    <li>procurar</li>
                 </ul>
-            </div>         
+            </div>
+
+            <div class="navbar-right">
+                <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
+                <button id="login-button">Login</button>
+            </div>             
         </nav>
     </header>
 
     <main>
         <section class="home-container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="..." alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar..." id="search-input">
+                <button id="search-button">
+                    <img src="CSS/Sources/search.png" alt="Pesquisar" class="search-icon">
+                </button>
             </div>
         </section>
 
