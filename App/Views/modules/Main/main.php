@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/CSS/main.css">
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/responsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>BarberPro</title>
 </head>
 <body>
     <header>
         <nav>
-        <img href="main.php" src="CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro">
+        <img href="main.php" src="/CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro">
             <div class="navbar-links">
                 <ul>
                     <a href="/main"><li>início</li></a>
@@ -43,15 +44,15 @@
         <section class="barbers-container">
         <div class="cards-container">
         <div class="card">
-            <img src="CSS/Sources/card1-image.jpg" alt="Título do Card 1" class="card-image">
+            <img src="CSS/Sources/barbearia-img.jpg" alt="Brother's Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 1</h3>
-                <p>Endereço do Card 1</p>
+                <h3>Brother's Barbearia</h3>
+                <p>Floriano Peixoto 189, Bariri, SP, Brazil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card2-image.jpg" alt="Título do Card 2" class="card-image">
+            <img src="CSS/Sources/card2-image.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Título do Card 2</h3>
                 <p>Endereço do Card 2</p>
@@ -59,7 +60,7 @@
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card3-image.jpg" alt="Título do Card 3" class="card-image">
+            <img src="CSS/Sources/card3-image.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Título do Card 3</h3>
                 <p>Endereço do Card 3</p>
@@ -67,7 +68,7 @@
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card4-image.jpg" alt="Título do Card 4" class="card-image">
+            <img src="CSS/Sources/card4-image.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Título do Card 4</h3>
                 <p>Endereço do Card 4</p>
@@ -75,7 +76,7 @@
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card5-image.jpg" alt="Título do Card 5" class="card-image">
+            <img src="CSS/Sources/card5-image.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Título do Card 5</h3>
                 <p>Endereço do Card 5</p>
@@ -83,7 +84,7 @@
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card6-image.jpg" alt="Título do Card 6" class="card-image">
+            <img src="CSS/Sources/card6-image.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Título do Card 6</h3>
                 <p>Endereço do Card 6</p>
