@@ -16,14 +16,14 @@
             <div class="navbar-links">
                 <ul>
                     <a href="/main"><li>início</li></a>
-                    <a href=""><li>agendamentos</li></a>
+                    <a href="/Views/modules/Main/calendar.php"><li>agendamentos</li></a>
                     <a href=""><li>procurar</li></a>
                 </ul>
             </div>
 
             <div class="navbar-right">
                 <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
-                <a href="/register/"><button id="login-button">Login</button></a>
+                <a href="/register"><button id="login-button">Login</button></a>
             </div>             
         </nav>
     </header>
@@ -33,7 +33,7 @@
             <h2>Encontre o seu Barbeiro!</h2>
             <div class="search-wrapper">
                 <div class="search-container">
-                    <input type="text" placeholder="Buscar..."      id="search-input">
+                    <input type="text" placeholder="Buscar..." id="search-input">
                     <button id="search-button">
                         <img src="CSS/Sources/search.png" alt="Pesquisar" class="search-icon">
                     </button>

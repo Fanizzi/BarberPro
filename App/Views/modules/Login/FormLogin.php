@@ -21,7 +21,7 @@
 
             <div class="navbar-right">
                 <img src="/CSS/Sources/user-icon.png" alt="Login" class="user-icon">
-                <a href="/register/"><button id="login-button">Login</button></a>
+                <a href="/register"><button id="login-button">Login</button></a>
             </div>             
         </nav>
     </header>

@@ -27,7 +27,8 @@ html, body {
 header nav {
     position: fixed;
     top: 0;
-    width: 100%; 
+    width: 100%;
+    z-index: 1000; 
     background-color: #242424; 
     display: flex;
     align-items: center;
@@ -106,7 +107,7 @@ nav {
 }
 
 .home-container {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 footer {
