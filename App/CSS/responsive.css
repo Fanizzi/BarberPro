@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 cards por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* 1 card por linha em telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    #logo {
+        height: 40px;
+    }
+
+    .navbar-links ul {
+        gap: 15px;
+    }
+}
