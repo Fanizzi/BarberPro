@@ -23,7 +23,7 @@
 
             <div class="navbar-right">
                 <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
-                <a href="/register"><button id="login-button">Login</button></a>
+                <a href="/login"><button id="login-button">Login</button></a>
             </div>             
         </nav>
     </header>
@@ -44,26 +44,26 @@
         <section class="barbers-container">
         <div class="cards-container">
         <div class="card">
-            <img src="CSS/Sources/barbearia-img.jpg" alt="Brother's Barbearia" class="card-image">
+            <img src="/CSS/Sources/barbearia-img.jpg" alt="Brother's Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Brother's Barbearia</h3>
-                <p>Floriano Peixoto 189, Bariri, SP, Brazil</p>
+                <p>Floriano Peixoto 189, Bariri, SP, Brasil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card2-image.jpg" alt="Imagem da Barbearia" class="card-image">
+            <img src="/CSS/Sources/barbearia-2.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 2</h3>
-                <p>Endereço do Card 2</p>
+                <h3>Gabriel's Barbearia</h3>
+                <p>Av Claudionor Barbieri, 528, Bariri, SP, Brasil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card3-image.jpg" alt="Imagem da Barbearia" class="card-image">
+            <img src="/CSS/Sources/barbearia-3.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 3</h3>
-                <p>Endereço do Card 3</p>
+                <h3>Barbearia Jahu</h3>
+                <p>Rua Rui Barbosa, 961, Jaú, SP, Brasil</p>
             </div>
         </div>
 
