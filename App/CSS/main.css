@@ -32,8 +32,7 @@ header nav {
     background-color: #242424; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: space-around;
 }
 
 nav {
@@ -43,7 +42,7 @@ nav {
 
 #logo {
     float: left;
-    width: 30vh;
+    width: 20vh;
     cursor: pointer;
 }
 

@@ -8,105 +8,244 @@
     font-family: "Poppins", sans-serif;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: transparent;
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
 }
 
-::-webkit-scrollbar-thumb {
-    border-radius: 50px;
-    background-color: #e48900;
-}
-
-header nav {
-    position: fixed; /* Fixa a barra de navegação no topo */
-    top: 0; /* Posiciona a barra no topo da página */
-    left: 0; /* Alinha a barra à esquerda */
-    right: 0; /* Expande a barra até a direita */
-    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
-    background-color: #242424; /* Mantém o fundo da barra de navegação */
+.login-register-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    height: 100vh;
+    transition: all 0.5s ease;
 }
 
-nav {
-    background-color: #242424;
-    height: 10vh;
-}
-
-#logo {
-    float: left;
-    width: 30vh;
-    cursor: pointer;
-}
-
-.navbar-links {
-    color: #fff;
+.left-side {
+    flex: 1;
+    background-color: #2d2d2d;
+    color: white;
     display: flex;
     justify-content: center;
-}
-
-.navbar-links ul {
-    list-style: none;
-    margin: auto;
-    display: flex;
-    gap: 30px;
-}
-
-.navbar-links li {
-    display: inline-block;
-    margin: auto;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.3s ease;
-    font-size: 20px;
-    cursor: default;
-}
-
-.navbar-links a {
-    color:  #fff;
-    text-decoration: none;
-}
-
-.navbar-links li:hover {
-    color: #e48900;
-    border-bottom-color: #e48900;
-}
-
-.navbar-right {
-    display: flex;
     align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
-#login-button {
+.message-container {
+    text-align: center;
+}
+
+.message-container h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.message-container p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.message-container button {
+    padding: 10px 20px;
+    background-color: #e48900;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.message-container button:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, .5), 0 0 10px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+}
+
+.right-side {
+    flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
-    background-color: #555;
+    background-color: #F9F9FB;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.submit-button {
+    padding: 12px;
+    background-color: #e48900;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
+    width: 100%;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-#login-button:hover {
-    background-color: #e48900;
+.submit-button:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, .5), 0 0 10px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
 }
 
-.user-icon {
-    height: 6vh;
-    margin: 10px;
-    cursor: pointer;
+.left-side img {
+    max-width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
 }
 
-.home-container {
-    margin-top: 100px;
+/* Estilo básico e transição para o contêiner principal */
+.login-register-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Esconde qualquer transbordamento durante a transição */
 }
 
-.home-container h2 {
-    text-align: center;
+/* Configurações de transição para os lados */
+.left-side, .right-side {
+    width: 50%;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+/* Posicionamento inicial */
+.left-side {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-side {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Classe que troca os lados */
+.switch-sides .left-side {
+    transform: translateX(100%); /* Desliza o lado esquerdo para a direita */
+}
+
+.switch-sides .right-side {
+    transform: translateX(-100%); /* Desliza o lado direito para a esquerda */
+}
+
+/* Contêiner dos botões de login social */
+.social-login {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+    white-space: nowrap; /* Impede quebra de linha no texto */
+}
+
+/* Checkbox "Lembrar de mim" */
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-left: 8px;
+}
+
+/* Estilo do link "Esqueci minha senha" */
+.forgot-password {
     color: #e48900;
-    margin: 20px 0;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Estilo base para os botões circulares */
+.social-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão do Google */
+.google-button {
+    background-color: #db4437;
+}
+
+.google-button:hover {
+    background-color: #c1351d;
+}
+
+/* Botão do Facebook */
+.facebook-button {
+    background-color: #4267B2;
+}
+
+.facebook-button:hover {
+    background-color: #365899;
+}
+
+/* Efeito de clique */
+.social-button:active {
+    transform: scale(0.95);
+}
+
+
+.hidden {
+    display: none;
 }
