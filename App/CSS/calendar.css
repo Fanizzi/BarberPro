@@ -62,6 +62,7 @@ button:hover {
     font-weight: bold;
     transition: background-color 0.3s;
     border: 1px solid #e0e0e0;
+    cursor: pointer;
 }
 
 .day:hover {
@@ -69,8 +70,27 @@ button:hover {
     color: white;
 }
 
+/* Estilo para os dias passados */
+.day-past {
+    background-color: #d3d3d3;
+    color: #a9a9a9;
+    cursor: not-allowed;
+}
+
+/* Estilo para os dias do mês seguinte e além (meses futuros) */
 .day-disabled {
     background-color: #f0f0f0;
     color: #999;
     cursor: not-allowed;
+}
+
+/* Estilo para os dias habilitados (para contraste com os passados) */
+.day:not(.day-past):hover, .day:not(.day-disabled):hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para os dias de hoje */
+.day.today {
+    background-color: #e48900; /* Cor de fundo para o dia atual */
+    color: white;
 }

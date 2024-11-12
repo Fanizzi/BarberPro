@@ -24,90 +24,94 @@ html, body {
     background-color: #e48900;
 }
 
-header nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; 
-    background-color: #242424; 
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-nav {
-    background-color: #242424;
-    height: 10vh;
-}
-
-#logo {
-    float: left;
-    width: 20vh;
-    cursor: pointer;
-}
-
-.navbar-links {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar-links ul {
-    list-style: none;
-    margin: auto;
-    display: flex;
-    gap: 30px;
-}
-
-.navbar-links li {
-    display: inline-block;
-    margin: auto;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.3s ease;
-    font-size: 20px;
-    cursor: default;
-}
-
-.navbar-links a {
-    color:  #fff;
-    text-decoration: none;
-}
-
-.navbar-links li:hover {
-    color: #e48900;
-    border-bottom-color: #e48900;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-}
-
-#login-button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#login-button:hover {
-    background-color: #e48900;
-}
-
-.user-icon {
-    height: 6vh;
-    margin: 10px;
-    cursor: pointer;
-}
-
 .home-container {
     margin-top: 100px;
 }
+
+.home-container h2 {
+    text-align: center;
+    color: #e48900;
+    margin: 20px 0;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.search-container {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#search-input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 300px;
+    font-size: 16px;
+}
+
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-icon {
+    height: 24px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Largura de cada card (3 cards por linha com espaçamento) */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0 5px 0;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
 
 footer {
     margin-top: auto;
