@@ -6,7 +6,7 @@ use App\DAO\LoginDAO;
 
 class LoginModel extends Model
 {
-    public $email, $senha;
+    public $email, $senha, $nome, $avatar;
 
     public function authenticate()
     {
@@ -18,5 +18,12 @@ class LoginModel extends Model
             return $dados_usuario_logado;
         else
             null;
+    }
+
+    // Método para obter as informações do usuário logado
+    public function getUserInfo($id)
+    {
+        $dao = new LoginDAO();
+        return $dao->selectById($id); // Crie ou ajuste o método selectById no LoginDAO para obter nome e avatar
     }
 }

@@ -12,9 +12,15 @@ class CadastroModel extends Model
     {
         $dao = new CadastroDAO();
 
-        if(empty($this->id))
-        {
+        // Define o caminho da imagem padrão se o avatar não estiver configurado
+        if (empty($this->avatar)) {
+            $this->avatar = '/uploads/avatars/user-icon.png';
+        }
+
+        if (empty($this->id)) {
             $dao->insert($this);
+        } else {
+            $dao->update($this);
         }
 
         header('Location: /login');

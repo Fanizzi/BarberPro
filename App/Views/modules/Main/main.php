@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/main.css">
-    <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/responsive.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>BarberPro</title>
 </head>
 <body>
     <header>
         <nav>
-        <img href="main.php" src="/CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro">
+        <a href="/main"><img src="/CSS/Sources/barberpro-logo-semfundo.png" id="logo" alt="BarberPro"></a>
             <div class="navbar-links">
                 <ul>
                     <a href="/main"><li>início</li></a>
-                    <a href="/Views/modules/Main/calendar.php"><li>agendamentos</li></a>
+                    <a href="/agendamentos"><li>agendamentos</li></a>
                     <a href=""><li>procurar</li></a>
                 </ul>
             </div>
 
             <div class="navbar-right">
-                <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
-                <a href="/login"><button id="login-button">Login</button></a>
+                <?php if (isset($_SESSION['usuario_logado'])): ?>
+                    <?php 
+                        $usuario = unserialize($_SESSION['usuario_logado']); 
+                        $nome = htmlspecialchars($usuario->nome);
+                        $avatar = htmlspecialchars($usuario->avatar); // Substitua pelo caminho correto do avatar
+                    ?>
+                    <div class="navbar-user">
+                        <img src="<?= $avatar ?>" alt="Avatar de <?= $nome ?>" class="user-icon">
+                        <span class="user-name"><?= $nome ?></span>
+                        <a href="/logout">Sair</a>
+                    </div>
+                <?php else: ?>
+                    <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
+                    <a href="/login" class="login-button">Login</a>
+                <?php endif; ?>
+                
             </div>             
         </nav>
     </header>
@@ -47,7 +61,7 @@
             <img src="/CSS/Sources/barbearia-img.jpg" alt="Brother's Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Brother's Barbearia</h3>
-                <p>Floriano Peixoto 189, Bariri, SP, Brasil</p>
+                <p>R. Floriano Peixoto 189, Bariri, SP, Brasil</p>
             </div>
         </div>
 
@@ -55,7 +69,7 @@
             <img src="/CSS/Sources/barbearia-2.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Gabriel's Barbearia</h3>
-                <p>Av Claudionor Barbieri, 528, Bariri, SP, Brasil</p>
+                <p>Av. Claudionor Barbieri, 528, Bariri, SP, Brasil</p>
             </div>
         </div>
 
@@ -63,31 +77,31 @@
             <img src="/CSS/Sources/barbearia-3.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
                 <h3>Barbearia Jahu</h3>
-                <p>Rua Rui Barbosa, 961, Jaú, SP, Brasil</p>
+                <p>R. Rui Barbosa, 961, Jaú, SP, Brasil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card4-image.jpg" alt="Imagem da Barbearia" class="card-image">
+            <img src="CSS/Sources/barbearia-4.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 4</h3>
-                <p>Endereço do Card 4</p>
+                <h3>O Soberano Barbearia</h3>
+                <p>R. Quintino Bocaiúva 940, Jaú, SP, Brasil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card5-image.jpg" alt="Imagem da Barbearia" class="card-image">
+            <img src="CSS/Sources/barbearia-5.jpg" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 5</h3>
-                <p>Endereço do Card 5</p>
+                <h3>Barbearia Bauru</h3>
+                <p>R. Alfredo Fontão, 4-17 - Jardim Paulista , Bauru, SP, Brasil</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="CSS/Sources/card6-image.jpg" alt="Imagem da Barbearia" class="card-image">
+            <img src="CSS/Sources/barbearia-6.png" alt="Imagem da Barbearia" class="card-image">
             <div class="card-content">
-                <h3>Título do Card 6</h3>
-                <p>Endereço do Card 6</p>
+                <h3>Barbearia XV</h3>
+                <p>R. Riachuelo, 180 - Centro, Jaú - SP, Brasil</p>
             </div>
         </div>
         </div>
