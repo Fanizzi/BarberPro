@@ -1,0 +1,160 @@
+
+.calendar-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e48900;
+}
+
+#current-month {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.day:hover {
+    background-color: #e48900;
+    color: white;
+}
+
+.day-past {
+    background-color: #d3d3d3;
+    color: #a9a9a9;
+    cursor: not-allowed;
+}
+
+.day-disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.day.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilos para a lista de agendamentos */
+#appointments-details {
+    margin-top: 30px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.appointments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.appointment-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-time,
+.appointment-client,
+.appointment-service,
+.appointment-status {
+    flex: 1;
+    text-align: center;
+}
+
+.appointment-time {
+    font-weight: bold;
+    color: #333;
+}
+
+.appointment-status {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.appointment-status.confirmed {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.appointment-status.pending {
+    background-color: #FF9800;
+    color: white;
+}
+
+.appointment-status.canceled {
+    background-color: #F44336;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .appointment-item {
+        flex-direction: column;
+        align-items: center;
+    }
+}
