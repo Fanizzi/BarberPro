@@ -6,7 +6,7 @@ use App\DAO\CadastroDAO;
 
 class CadastroModel extends Model
 {
-    public $id, $nome, $email, $senha, $telefone, $id_servico;
+    public $id, $nome, $email, $senha, $telefone, $avatar, $id_servico;
 
     public function save()
     {

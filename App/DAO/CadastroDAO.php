@@ -14,8 +14,8 @@ class CadastroDAO extends DAO
 
     public function insert(CadastroModel $model)
     {
-        $sql = "INSERT INTO Cliente (nome, email, senha, telefone, id_servico)
-                VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Cliente (nome, email, senha, telefone, avatar, id_servico)
+                VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -23,7 +23,8 @@ class CadastroDAO extends DAO
         $stmt->bindValue(2, $model->email);
         $stmt->bindValue(3, $model->senha);
         $stmt->bindValue(4, $model->telefone);
-        $stmt->bindValue(5, $model->id_servico);
+        $stmt->bindValue(5, $model->avatar);
+        $stmt->bindValue(6, $model->id_servico);
 
         $stmt->execute();
     }

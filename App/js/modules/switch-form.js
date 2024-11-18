@@ -1,34 +1,38 @@
-export function toggleForms() {
+// Função principal para alternar os formulários e lados
+function toggleForms() {
     const toggleButton = document.getElementById("register-overlay-btn");
     const loginForm = document.getElementById("login-form");
     const registerForm = document.getElementById("register-form");
-    const messageContainer = document.querySelector(".message-container");
     const container = document.querySelector(".login-register-container");
+    const messageContainer = document.querySelector(".message-container");
 
-    // Função para alternar entre os formulários, atualizar o botão, mensagem e inverter os lados
-    function toggleFormsAndButton() {
-        if (loginForm.classList.contains("hidden")) {
-            // Mostrar o formulário de login e atualizar a mensagem e o botão
-            loginForm.classList.remove("hidden");
-            registerForm.classList.add("hidden");
-            toggleButton.textContent = "Registrar";
-            messageContainer.querySelector("h2").textContent = "Não tem uma conta?";
-            messageContainer.querySelector("p").textContent = "Registre-se e aproveite os nossos serviços!";
-            container.classList.remove("switch-sides"); // Reverte a posição dos lados
-        } else {
-            // Mostrar o formulário de registro e atualizar a mensagem e o botão
+    toggleButton.addEventListener("click", () => {
+        // Verifica se o formulário de login está visível
+        const isLoginVisible = !loginForm.classList.contains("hidden");
+
+        if (isLoginVisible) {
+            // Oculta o formulário de login, mostra o de registro e troca os lados
             loginForm.classList.add("hidden");
             registerForm.classList.remove("hidden");
+            container.classList.add("switch-sides");
+
+            // Atualiza o botão e as mensagens
             toggleButton.textContent = "Voltar para Login";
             messageContainer.querySelector("h2").textContent = "Já possui um registro?";
             messageContainer.querySelector("p").textContent = "Faça login para continuar.";
-            container.classList.add("switch-sides"); // Troca os lados
-        }
-    }
+        } else {
+            // Oculta o formulário de registro, mostra o de login e troca os lados
+            registerForm.classList.add("hidden");
+            loginForm.classList.remove("hidden");
+            container.classList.remove("switch-sides");
 
-    // Adiciona o evento de clique ao botão para alternar entre os formulários
-    toggleButton.addEventListener("click", toggleFormsAndButton);
+            // Atualiza o botão e as mensagens
+            toggleButton.textContent = "Registrar";
+            messageContainer.querySelector("h2").textContent = "Não tem uma conta?";
+            messageContainer.querySelector("p").textContent = "Registre-se e aproveite os nossos serviços!";
+        }
+    });
 }
 
-// Chama a função ao carregar a página
-toggleForms();
+// Inicialização da função ao carregar a página
+document.addEventListener("DOMContentLoaded", toggleForms);

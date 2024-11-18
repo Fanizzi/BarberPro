@@ -5,6 +5,7 @@ use App\Controller\CadastroController;
 use App\Controller\MainController;
 use App\Controller\CadastroBarberController;
 use App\Controller\AgendamentosController;
+use App\Controller\LoginBarberController;
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -19,7 +20,7 @@ switch ($uri_parse) {
         CadastroController::save();
         break;
     
-    case '/regiser_barbershop/':
+    case '/register_barbershop':
         CadastroBarberController::form();
         break;
     
@@ -44,6 +45,10 @@ switch ($uri_parse) {
 
     case '/logout':
         LoginController::logout();
+        break;
+
+    case '/logout_barbershop':
+        LoginBarberController::logout();
         break;
     
     case '/main':

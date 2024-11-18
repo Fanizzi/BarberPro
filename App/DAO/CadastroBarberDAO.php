@@ -14,8 +14,8 @@ class CadastroBarberDAO extends DAO
 
     public function insert(CadastroBarberModel $model)
     {
-        $sql = "INSERT INTO Barbearia (nome_contato, nome_barbearia, email, senha, telefone, cnpj)
-                VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Barbearia (nome_contato, nome_barbearia, email, senha, telefone, cnpj, id_endereco, banner)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -25,6 +25,8 @@ class CadastroBarberDAO extends DAO
         $stmt->bindValue(4, $model->senha);
         $stmt->bindValue(5, $model->telefone);
         $stmt->bindValue(6, $model->cnpj);
+        $stmt->bindValue(7, $model->id_endereco); 
+        $stmt->bindValue(8, $model->banner);
 
         $stmt->execute();
     }
@@ -43,6 +45,16 @@ class CadastroBarberDAO extends DAO
         $stmt->bindValue(6, $model->cnpj);
 
         $stmt->execute();
+    }
+
+    public function emailExists(string $email): bool
+    {
+        $sql = "SELECT COUNT(*) FROM Barbearia WHERE email = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+
+        return $stmt->fetchColumn() > 0; // Retorna true se encontrar o e-mail
     }
 
     public function select()

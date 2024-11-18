@@ -22,22 +22,24 @@
             </div>
 
             <div class="navbar-right">
-                <?php if (isset($_SESSION['usuario_logado'])): ?>
-                    <?php 
-                        $usuario = unserialize($_SESSION['usuario_logado']); 
-                        $nome = htmlspecialchars($usuario->nome);
-                        $avatar = htmlspecialchars($usuario->avatar); // Substitua pelo caminho correto do avatar
-                    ?>
-                    <div class="navbar-user">
-                        <img src="<?= $avatar ?>" alt="Avatar de <?= $nome ?>" class="user-icon">
-                        <span class="user-name"><?= $nome ?></span>
-                        <a href="/logout">Sair</a>
-                    </div>
+                <<?php if (isset($_SESSION['usuario_logado'])): ?>
+                <?php 
+                    $usuario = unserialize($_SESSION['usuario_logado']); 
+                    $nome_completo = htmlspecialchars($usuario->nome);
+                    $avatar = htmlspecialchars($usuario->avatar);
+                    
+                    // Pega apenas o primeiro nome
+                    $primeiro_nome = strtok($nome_completo, ' ');
+                ?>
+                <div class="navbar-user">
+                    <img src="<?= $avatar ?>" alt="Avatar de <?= $primeiro_nome ?>" class="user-icon">
+                    <span class="user-name"><?= $primeiro_nome ?></span>
+                    <a href="/logout">Sair</a>
+                </div>
                 <?php else: ?>
                     <img src="CSS/Sources/user-icon.png" alt="Login" class="user-icon">
                     <a href="/login" class="login-button">Login</a>
                 <?php endif; ?>
-                
             </div>             
         </nav>
     </header>
@@ -64,6 +66,22 @@
                 <p>R. Floriano Peixoto 189, Bariri, SP, Brasil</p>
             </div>
         </div>
+
+        <!--  Exibição de barbearias através do banco de dados
+        <div class="cards-container">
+            <?php foreach ($model as $barbearia): ?>
+                <div class="card">
+                    <a href="/barbearia?id=<?= $barbearia->id ?>">
+                        <img src="<?= htmlspecialchars($barbearia->imagem ? $barbearia->imagem : '/uploads/barbearia/barber-banner.png') ?>" alt="Imagem da <?= htmlspecialchars($barbearia->nome) ?>" class="card-image">
+                        <div class="card-content">
+                            <h3><?= htmlspecialchars($barbearia->nome) ?></h3>
+                            <p><?= htmlspecialchars($barbearia->endereco) ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        --!>
 
         <div class="card">
             <img src="/CSS/Sources/barbearia-2.jpg" alt="Imagem da Barbearia" class="card-image">

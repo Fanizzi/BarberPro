@@ -6,18 +6,25 @@ use App\DAO\CadastroBarberDAO;
 
 class CadastroBarberModel extends Model
 {
-    public $id, $nome_contato, $nome_barbearia, $email, $senha, $telefone, $cnpj;
+    public $id, $nome_contato, $nome_barbearia, $email, $senha, $telefone, $cnpj, $id_endereco, $banner;
 
     public function save()
     {
         $dao = new CadastroBarberDAO();
 
-        if(empty($this->id))
-        {
+        // Verifica se o e-mail já existe
+        if ($dao->emailExists($this->email)) {
+            // Redireciona para a página de erro ou retorna uma mensagem
+            header('Location: /erro_email_existente'); // Substitua pela rota adequada
+            exit;
+        }
+
+        // Continua com o processo de salvamento
+        if (empty($this->id)) {
             $dao->insert($this);
         }
 
-        header('Location: /login');
+        header('Location: /login_barbershop');
     }
 
     public function update()

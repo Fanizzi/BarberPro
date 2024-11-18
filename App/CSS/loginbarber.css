@@ -1,0 +1,56 @@
+.form-step {
+    display: none; /* Inicialmente esconde todas as etapas */
+}
+
+.form-step h2{
+    text-align: center;
+    margin: 10px;
+}
+
+.form-step.active {
+    display: block; /* Exibe a etapa ativa */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contêiner dos botões */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Espaço igual entre os botões */
+    margin-top: 20px; /* Adicione um espaço acima, se necessário */
+}
+
+/* Estilo dos botões */
+.button-container button {
+    flex: 1; /* Opcional: Torna os botões do mesmo tamanho */
+    margin: 0 10px; /* Espaçamento lateral entre os botões */
+    padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
+    border: none; /* Remova bordas, se necessário */
+    border-radius: 5px; /* Borda arredondada para os botões */
+    cursor: pointer;
+}
+
+.button-container button:first-child {
+    margin-left: 0; /* Remove margem extra no primeiro botão */
+}
+
+.button-container button:last-child {
+    margin-right: 0; /* Remove margem extra no último botão */
+}
+
+/* Estilos para botões individuais */
+.nxtPrvBtn {
+    background-color: #ddd; /* Cor do botão de "Voltar" */
+    color: #333;
+}
+
+.submit-button {
+    background-color: #e48900;
+    color: white;
+}
+
+.button-container button:hover {
+    opacity: 0.9; /* Efeito ao passar o mouse */
+}

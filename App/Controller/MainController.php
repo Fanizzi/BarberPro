@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
-use App\Model\MainModel;
+use App\DAO\BarbeariaDAO;
 
 class MainController extends Controller
 {
     public static function index()
     {
+        $dao = new BarbeariaDAO();
+        $barbearias = $dao->getAllBarbearias();
+
         parent::render('/Main/main');
     }
 }

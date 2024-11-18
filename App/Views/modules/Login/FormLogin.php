@@ -24,8 +24,8 @@
             <!-- Formulário de Login -->
             <form action="/login/auth" method="POST" id="login-form" class="form">
                 <h2>Login</h2>
-                <input type="email" placeholder="Email" id="email" name="email">
-                <input type="password" placeholder="Senha" id="senha" name="senha">
+                <input type="email" placeholder="Email" id="login-email" name="email">
+                <input type="password" placeholder="Senha" id="login-senha" name="senha">
 
                 <!-- Opção de Lembrar de Mim e Esqueci minha senha -->
                 <div class="login-options">
@@ -47,9 +47,9 @@
             <form action="/register/save" method="POST" id="register-form" class="form hidden">
                 <h2>Registrar</h2>
                 <input type="text" placeholder="Nome" id="nome" name="nome">
-                <input type="email" placeholder="Email" id="email" name="email">
-                <input type="password" placeholder="Senha" id="senha" name="senha">
-                <input type="text" placeholder="Telefone" id="telefone" name="telefone">
+                <input type="email" placeholder="Email" id="register-email" name="email">
+                <input type="password" placeholder="Senha" id="register-senha" name="senha">
+                <input type="text" placeholder="Telefone" id="register-telefone" name="telefone" maxlength="15">
                 
                 <!-- Botões de login social -->
                 <div class="social-login">
@@ -63,5 +63,6 @@
     </div>
 
     <script src="/js/modules/switch-form.js" type="module"></script>
+    <script src="/js/modules/mask.js" type="module"></script>
 </body>
 </html>

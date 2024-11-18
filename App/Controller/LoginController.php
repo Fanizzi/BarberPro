@@ -18,16 +18,16 @@ class LoginController extends Controller
         $model->email = $_POST['email'];
         $model->senha = $_POST['senha'];
 
-        $usuario_logado = $model->authenticate();
+        $authenticatedUser = $model->authenticate();
 
-        if ($usuario_logado !== null) {
+        if ($authenticatedUser!== null) {
 
             // Define o avatar padrão se o usuário não tiver um avatar
             if (empty($usuario_logado->avatar)) {
-                $usuario_logado->avatar = '/uploads/avatars/user-icon.png';
+                $authenticatedUser->avatar = '/uploads/avatars/user-icon.png';
             }
 
-            $_SESSION['usuario_logado'] = serialize($usuario_logado);
+            $_SESSION['usuario_logado'] = serialize($authenticatedUser);
 
             header("Location: /main");
             exit;

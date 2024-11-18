@@ -2,15 +2,30 @@ CREATE DATABASE db_appbarber;
 
 USE db_appbarber;
 
+
+-- Criação da tabela Endereco
+CREATE TABLE Endereco (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    logradouro VARCHAR(150) NOT NULL,
+    numero VARCHAR(5) NOT NULL,
+    cidade VARCHAR(200) NOT NULL,
+    estado VARCHAR(150) NOT NULL,
+    cep CHAR(8) NOT NULL
+);
+
+
 -- Criação da tabela Barbearia
 CREATE TABLE Barbearia (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_barbearia VARCHAR(100) NOT NULL,
     nome_contato VARCHAR(150) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(16) NOT NULL,
     telefone CHAR(11) NOT NULL,
-    cnpj VARCHAR(14) NOT NULL
+    cnpj VARCHAR(14) NOT NULL,
+    banner VARCHAR(255) DEFAULT 'barber-banner.jpg',
+    id_endereco INT NOT NULL,
+    FOREIGN KEY (id_endereco) REFERENCES Endereco(id)
 );
 
 -- Criação da tabela Servicos
@@ -27,7 +42,7 @@ CREATE TABLE Servicos (
 CREATE TABLE Cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(16) NOT NULL,
     telefone CHAR(11) NOT NULL,
     avatar VARCHAR(255) NOT NULL,
@@ -50,9 +65,9 @@ CREATE TABLE Lembretes (
 CREATE TABLE Cliente_Lembrete_Assoc (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
-    id_lembretes INT NOT NULL,
+    id_lembrete INT NOT NULL,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
-    FOREIGN KEY (id_lembretes) REFERENCES Lembretes(id)
+    FOREIGN KEY (id_lembrete) REFERENCES Lembretes(id)
 );
 
 CREATE TABLE Agendamentos (
@@ -60,8 +75,8 @@ CREATE TABLE Agendamentos (
 	data_agendamento DATE NOT NULL,
 	id_cliente INT NOT NULL,
 	id_barbearia INT NOT NULL,
-	id_servico INT NOT NULL
+	id_servicos INT NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
+	FOREIGN KEY (id_barbearia) REFERENCES Barbearia(id),
+    FOREIGN KEY (id_servicos) REFERENCES Servicos(id)
 );
-
-
-SELECT * FROM Cliente;
